@@ -1,36 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bokashi Apps</title>
-  <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f6f6f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .card {
-      background: white;
-      padding: 48px;
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 480px;
-    }
-    h1 { font-size: 24px; margin-bottom: 8px; color: #1a1a1a; }
-    p { color: #6b6b6b; font-size: 14px; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bokashi Apps · LYD Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+<style>
+  :root {
+    --bg: #132019;
+    --surface: #1a2a21;
+    --text: #ece7dc;
+    --text-muted: #8ea296;
+    --accent: #cda355;
+    --border: rgba(236, 231, 220, 0.1);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.15;
+    margin: 0 0 14px;
+    color: var(--text);
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 32px;
+    max-width: 46ch;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 36px;
+  }
+
+  .status .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .capabilities {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-bottom: 36px;
+  }
+
+  .capabilities p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text);
+    margin: 0 0 8px;
+  }
+
+  .capabilities p:last-child { margin-bottom: 0; }
+
+  .capabilities .field {
+    color: var(--text-muted);
+    display: inline-block;
+    min-width: 108px;
+  }
+
+  .contact {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .contact a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(205, 163, 85, 0.35);
+  }
+
+  .contact a:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 30px; }
+    .capabilities .field { display: block; margin-bottom: 2px; }
+  }
+</style>
 </head>
 <body>
-  <div class="card">
+  <div class="page">
+    <div class="brand">LYD Development</div>
+
     <h1>Bokashi Apps</h1>
-    <p>by LYD Development</p>
+    <p class="lede">
+      Keeps Bokashi's Shopify catalog in sync with connected third-party apps,
+      pulling products, collections, and media out for reporting and automation elsewhere.
+    </p>
+
+    <div class="status"><span class="dot"></span>In development</div>
+
+    <div class="capabilities">
+      <p><span class="field">Syncs</span>Products, collections, inventory, and media</p>
+      <p><span class="field">Feeds</span>Connected third-party apps and reporting tools</p>
+      <p><span class="field">Runs on</span>Scheduled and on-demand sync jobs</p>
+      <p><span class="field">Status</span>Under active development, features may change</p>
+    </div>
+
+    <p class="contact">
+      For access, setup questions, or to report an issue, contact
+      <a href="mailto:webmaster@lydbaligroup.com">webmaster@lydbaligroup.com</a>.
+    </p>
   </div>
 </body>
 </html>
